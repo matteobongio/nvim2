@@ -35,3 +35,28 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 -- vim.keymap.set("n", "<C-S-l>", "<C-w>L", { desc = "Move window to the right" })
 -- vim.keymap.set("n", "<C-S-j>", "<C-w>J", { desc = "Move window to the lower" })
 -- vim.keymap.set("n", "<C-S-k>", "<C-w>K", { desc = "Move window to the upper" })
+
+
+
+
+vim.keymap.set({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
+
+-- vim.keymap.set("n", "<C-z>", "<CMD>Format<CR>", { desc = "Format Document" })
+vim.keymap.set("i", "<C-z>", "<Esc>", { desc = "Format Document" })
+
+-- move highlighted Text
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+-- make cursor stay put when appending from line below
+vim.keymap.set("n", "J", "mzJ`z")
+
+-- keep cursor in the middle when half page jumping
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
+-- keep copy when replacing
+vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "replace without changing clipboard" })
+vim.keymap.set({ "n", "v" }, "<leader>dd", [["_d]], { desc = "delete without yank" })
+
+

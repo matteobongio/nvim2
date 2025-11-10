@@ -540,6 +540,11 @@ require('lazy').setup({
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         -- ts_ls = {},
         --
+        tinymist = {},
+        nil_ls = {},
+        clangd = {},
+        gopls = {},
+        rust_analyzer = {},
 
         lua_ls = {
           -- cmd = { ... },

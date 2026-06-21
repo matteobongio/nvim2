@@ -41,8 +41,7 @@ vim.keymap.set('n', '<M-k>', '<cmd>cprev<CR>')
 
 vim.keymap.set({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
 
--- vim.keymap.set("n", "<C-z>", "<CMD>Format<CR>", { desc = "Format Document" })
-vim.keymap.set("i", "<C-z>", "<Esc>", { desc = "Format Document" })
+vim.keymap.set("i", "<C-z>", "<Esc>")
 
 -- move highlighted Text
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")

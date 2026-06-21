@@ -391,6 +391,7 @@ require('lazy').setup({
             vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
           end
 
+          map('grf', vim.lsp.buf.format, '[F]ormat')
           -- Rename the variable under your cursor.
           --  Most Language Servers support renaming across files, etc.
           map('grn', vim.lsp.buf.rename, '[R]e[n]ame')
@@ -545,6 +546,7 @@ require('lazy').setup({
         gopls = {},
         rust_analyzer = {},
         hls = {},
+        ols = {},
 
         lua_ls = {
           -- cmd = { ... },

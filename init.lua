@@ -539,6 +539,7 @@ require('lazy').setup({
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         ts_ls = {},
+        vue_ls = {},
         glsl_analyzer = {},
         tinymist = {},
         nil_ls = {},
@@ -546,7 +547,7 @@ require('lazy').setup({
         gopls = {},
         rust_analyzer = {},
         hls = {},
-        ols = {},
+        basedpyright = {},
 
         lua_ls = {
           -- cmd = { ... },
@@ -903,3 +904,26 @@ require('lazy').setup({
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+
+-- shaders not fsharp
+vim.filetype.add({
+  extension = {
+    fs = "glsl",
+    vs = "glsl",
+  }
+})
+
+-- spellcheck typst
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "typst",
+  callback = function()
+    vim.opt_local.spell = true
+    -- vim.opt_local.spelllang = "en_us"
+    vim.opt_local.spelllang = { "en_us", "en_gb" }
+    vim.treesitter.start()
+    -- -- Highlight misspelled words
+    -- vim.opt_local.spellcapcheck = ""
+    -- -- Ignore words with numbers
+    -- vim.opt_local.spelloptions = "camel"
+  end,
+})

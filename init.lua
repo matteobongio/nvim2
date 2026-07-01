@@ -836,6 +836,7 @@ require('lazy').setup({
       require('nvim-treesitter').install {
         'bash', 'c', 'diff', 'html', 'lua', 'luadoc',
         'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc',
+        'typst',
       }
 
       -- Enable highlighting + indent for any filetype that has an installed parser
